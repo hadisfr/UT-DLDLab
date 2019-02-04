@@ -1,0 +1,8 @@
+image: blang/latex:ctanfull
+
+build:
+  script:
+    - latexmk -xelatex *.tex
+  artifacts:
+    paths:
+      - "*.pdf"
