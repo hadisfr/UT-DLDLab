@@ -127,6 +127,9 @@
 
 \newcommand\ol[1]{{\setul{-0.9em}{}\ul{#1}}}
 
+\DeclareSIUnit\bit{b}
+\DeclareSIUnit\byte{B}
+
 \makeatother
 
 \newcommand{\designverification}{
