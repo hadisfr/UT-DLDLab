@@ -7,7 +7,7 @@
 \supsubtitle{Sessions 1, 2, 3}
 \title{Clock and Periodic Signal Generation}
 \author{Katayoon Basharkhah \& Hadi Safari}
-\preparer{Katayoon Basharkhah}
+\preparer{\href{mailto:ktbasharkhah@gmail.com?subject=[DLDLab]\%20}{Katayoon Basharkhah}}
 \supervisor{Professor Z. Navabi}
 \university{University of Tehran}
 \college{College of Engineering\\School of Electrical \& Computer Engineering}
@@ -863,7 +863,7 @@ You should use a T~Flip-Flop after counter to produce a 50 duty cycle signal. Us
 \begin{figure}
     \centering
     \caption{74LS74 as a T~Flip-Flop\label{fig:74LS74}}
-    \resizebox{0.4\textwidth}{!}{
+    \resizebox{0.5\textwidth}{!}{
     \begin{circuitikz}
         % border
         \draw[very thick, fill={Black!10!White}] (0,14) |- (7,0) |- (5,14) -- (4.5,14) arc(0:-180:1) -- cycle;
@@ -920,7 +920,7 @@ Now connect these circuits together using I/O pins of FPGA, according to \fref{f
 \begin{figure}
     \centering
     \caption{Clock adjusting system\label{fig:clock_adj}}
-    \resizebox{0.9\textwidth}{!}{
+    \resizebox{\textwidth}{!}{
     \begin{circuitikz}
         % left
         \draw[thick, fill={Black!10!White}] (0,0) rectangle (7,3);
@@ -1061,7 +1061,6 @@ Now connect these circuits together using I/O pins of FPGA, according to \fref{f
 
 \designverification{}
 
-
 \clearpage
 
 \begin{appendices}
@@ -1073,7 +1072,7 @@ Now connect these circuits together using I/O pins of FPGA, according to \fref{f
     \item Click on \textit{File $\rhd$ New Project Wizard}
     \item Create an appropriate directory for your project and complete the form
     \item Select the FPGA device as \textit{Cyclone EP2C20F484C7} and then click \textit{Finish}
-    \begin{figure}[b]
+    \begin{figure}[!b]
         \centering
         \caption{Creating new project\label{fig:new_proj}}
         \includegraphics[width=\textwidth]{new_proj.png}
@@ -1123,5 +1122,12 @@ From \textit{Assignments $\rhd$ Pin Planner}, \nameref{fig:pin_planner} will app
 Now you can examine the resource usage of your design from \textit{Processing $\rhd$ Compilation Report} or by clicking on quick shortcut \includegraphics[height=2ex]{report.png}, and the timing from the \textit{Tools $\rhd$ TimeQuest Timing Analyzer}.
 
 \end{appendices}
+
+\section*{Acknowledgment}
+\addcontentsline{toc}{section}{Acknowledgment}
+
+This lab manual was prepared and developed by \href{mailto:ktbasharkhah@gmail.com?subject=[DLDLab]\%20}{Katayoon Basharkhah}, PHD student of Digital Systems at University of Tehran, under the supervision of professor Zain Navabi.
+
+This manual has been revised and edited by \href{mailto:hadi.safari@ut.ac.ir?subject=[DLDLab]\%20}{Hadi Safari}, undergraduate student of Computer Engineering at University of Tehran.
 
 \end{document}
