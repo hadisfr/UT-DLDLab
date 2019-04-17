@@ -18,7 +18,6 @@
 \date{Spring 1398}
 
 \graphicspath{{img/3/}}
-% \usetikzlibrary{positioning, shapes.multipart, shapes, arrows.meta}
 \pgfplotsset{compat=1.16}
 
 \begin{document}
@@ -47,8 +46,7 @@ By the end of this experiment, you should have learned:
 Some specifications are considered for a function generator:
 The \textit{bandwidth}, that is the frequency range of the source signal,
 the \textit{sample rate}, that is the maximum clock rate of the source signal,
-and the \textit{vertical resolution}, the smallest voltage increment that can be programmed in a signal source.\todo{Is this true? is this resolution?}
-Resolution is the data word width, in bits, of the instrument’s DAC.
+and the \textit{vertical resolution}, the smallest voltage increment that can be programmed in a signal source.Resolution is the data word width, in bits, of the instrument’s DAC.
 
 \begin{figure}[b]
     \centering
@@ -64,7 +62,7 @@ an amplitude selector
 and a DAC that converts the digital output to an analog signal, which can be observed and evaluated via an oscilloscope.
 A ROM memory is usually embedded to store any other arbitrary waveform.
 
-Accordingly, Below is the topics that are explained in the following of this experiment in details:\todo{Should be removed? There is a complete Table of Contents in the previous page. Or should be linked to each section?}
+Accordingly, Below is the topics that are explained in the following of this experiment in details:
 \begin{itemize}
     \item DAC
     \item Frequency Selector
@@ -100,7 +98,7 @@ In the frequency domain, a low-pass filter suppresses higher-frequency component
 
 Period of PWM has to be small enough so the effect of on/off switching be unnoticeable on load. Pulse Width (PW) determines amount of power that is fed to load.
 In this experiment, period of PWM is fixed to 256~clocks and its pulse width is the value on 8-bit input of module.
-\Fref{fig:PMW}\todo{?} shows sample PWM waves. In each cycle, first \textit{PW} clock output value is 1 and it is 0 for rest of cycle.
+\Fref{fig:PMW} shows sample PWM waves. In each cycle, first \textit{PW} clock output value is 1 and it is 0 for rest of cycle.
 
 \begin{enumerate}
     \item Write a Verilog code for DAC module. The output of the PWM module will go to an external board with an RC low pass filter.
@@ -113,7 +111,7 @@ In this experiment, period of PWM is fixed to 256~clocks and its pulse width is 
 
 In order to set the frequency of the output signal a frequency selector (or regulated frequency) is required. The frequency selector consists of a counter that divides a high source input signal to the desired value.
 You can take advantage of your previous design of the frequency regulator.
-The Block diagram of this component is shown in \Fref{fig:FSblockdia}.
+The Block diagram of this component is shown in \fref{fig:FSblockdia}.
 
 \begin{figure}
     \centering
@@ -138,7 +136,7 @@ This module is the heart of this project. It produces desired functions. Functio
 \begin{enumerate}
     \item As shown, waveforms rhomboid, square and triangle are based on a counter that counts up or down with each clock for the period of the waveform. The output of the frequency selector is the input for this module that determines the discrete incremental values of this signal (resolution).
     
-    \item Generation of sine function can be somewhat different. The following second order differential equation can be used to generate the sine function:\todo{Check these, please.}
+    \item Generation of sine function can be somewhat different. The following second order differential equation can be used to generate the sine function:
     \begin{gather*}
     \sin(n) = \sin(n-1) + a.\cos(n-1)\\
     \cos(n) = \cos(n-1) - a.\sin(n)
@@ -156,7 +154,7 @@ This module is the heart of this project. It produces desired functions. Functio
 
     \item To generate the arbitrary, you should use a 1-port ROM memory to store the value of the desired signal at each increment inside the memory addresses. You will receive a file named \path{arbitray.mif} that is used for ROM initialization. 
 
-    Refer to the Appendix~A\todo{Which Appendix?} to learn about ROM memories and the way they are generated and initialized through MegaWizard in Quartus~II. \Fref{fig:WGblockdia} shows the block diagram of the waveform generator module.
+    \Fref{fig:WGblockdia} shows the block diagram of the waveform generator module.
 \end{enumerate}
 
 \begin{figure}
@@ -190,17 +188,16 @@ You will finally get all the components together in a schematic design.
 
 One option in function generator is the amplitude of generated wave. This can be done by adding a module between digital function generator and DAC. Task of this module is to divide the input taken from digital function generator and divide it by a desired value and feed the result to DAC. Value of divisor is chosen by a 2-bit input.
 
-Type of amplitude is selected by a 2-bit input according to \fref{tab:ampsel}.\todo{\texttt{func[1:0]}? or amp?}
-
+Type of amplitude is selected by a 2-bit input according to \fref{tab:ampsel}.
 \begin{table}[b]
     \centering
     \caption{Amplitude selection\label{tab:ampsel}}
     \begin{tabular}{c c}
-        \texttt{func[1:0]} & Amplitude\\
+        \texttt{ampsel[1:0]} & Amplitude\\
         \hline
         \texttt{2'b00} & 1\\
         \texttt{2'b01} & 2\\
-        \texttt{2'b10} & 3\\
+        \texttt{2'b10} & 4\\
         \texttt{2'b11} & 8
     \end{tabular}
 \end{table}
@@ -236,11 +233,11 @@ capability to generate symbols for any HDL code with the corresponding inputs an
 \end{figure}
 
 
-You should use bus or line tool from the top toolbar menu  \includegraphics[height=2ex]{QuartusII4} and make all the interconnects between components.
+You should use bus or line tool from the top toolbar menu \includegraphics[height=2ex]{QuartusII4} and make all the interconnects between components.
 
 Double-click on the blank space in the Graphic Editor window, or click on the icon in the toolbar hat looks like an \texttt{AND} gate. A pop-up box will appear.
 
-Expand the hierarchy in the Libraries box as shown in the \fref{fig:qblockdia}\todo{this one?}. First expand libraries, then expand the library primitives, followed by expanding the library logic which comprises the logic gates. Use the gates if any is needed.
+Expand the hierarchy in the Libraries box. First expand libraries, then expand the library primitives, followed by expanding the library logic comprises the logic gates. Use the gates if any is needed.
 
 \begin{figure}
     \centering
