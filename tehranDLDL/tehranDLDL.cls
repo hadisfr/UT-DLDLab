@@ -2,6 +2,7 @@
 \ProvidesClass{tehranDLDL}
 
 \LoadClass{article}
+\RequirePackage[hyphens]{url}
 \RequirePackage{kvoptions}
 \RequirePackage{fancyhdr}
 \RequirePackage{float}
@@ -47,6 +48,13 @@
     \hypersetup{pdftitle=\thetitle}
     \hypersetup{pdfauthor=\theauthor}
     \hypersetup{pdfsubject={\thecourseshort{} :: \thetitle{}}}
+
+    \lstdefinelanguage{mif}{
+        keywords={DEPTH, WIDTH, ADDRESS_RADIX, DATA_RADIX},
+        morekeywords={CONTENT, BEGIN, END},
+        morecomment=[l]\%,
+        morecomment=[l]{--}
+    }
 
     \lstset{
         language=Verilog,
