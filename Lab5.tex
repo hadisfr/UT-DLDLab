@@ -175,7 +175,7 @@ The output of this module looks up a row of the character being displayed from t
 For example, as shown in code~\ref{lst:5-cahr-matrix}, pixels for character \texttt{5} with ASCII code of 53 decimal, begin at address \texttt{$\times$A8} hex that is $(53-32)*8$.
 
 \begin{figure}
-\begin{lstlisting}[caption={Character matrix for character \texttt{5}\label{lst:5-cahr-matrix}},language={mif}]
+\begin{lstlisting}[caption={Character matrix for character \texttt{5}\label{lst:5-cahr-matrix}},language={mif},linewidth=0.5\textwidth]
 0A8 : 01111110; %   ******
 0A9 : 01100000; %   **
 0AA : 01111100; %   *****
@@ -292,7 +292,7 @@ After understanding the VGA operation and displaying the text on a monitor, now 
 
 \begin{enumerate}
     \item As you have seen in the \nameref{sec:imp} part, the text on the monitor is displayed by $8\times8$ pixel that are small. Change the design to make the text larger but do not change the character pixel size or memory.
-    \item Use the \ul{Persian alphabet ASCII codes}\todo{What does \textit{Persian ASCII codes} mean? Does it mean \href{https://en.wikipedia.org/wiki/Iran_System_encoding}{Iran System encoding}? Should more description be provided?} instead of the English ones and write them in \path{mif} file. Then do the same as \nameref{sec:imp} part and show the characters on the monitor.
+    \item Use the Persian alphabet ASCII codes instead of the English ones and write them in \path{mif} file. Then do the same as \nameref{sec:imp} part and show the characters on the monitor.
 \end{enumerate}
 
 \designverification{}
@@ -302,8 +302,6 @@ After understanding the VGA operation and displaying the text on a monitor, now 
 Before coming to the lab, answer these questions. The pre-lab needs to be handed in at the start of the lab.
 
 \begin{enumerate}
-    \item Read about the \path{*.mif} files structure
-    on \url{https://www.intel.com/content/www/us/en/programmable/quartushelp/current/index.htm#reference/glossary/def_mif.htm}.
     \item Explain the MonitorSynch module based on the \fref{fig:refresh-cycle} synchronization timing.
     For more detailed information you can refer to
     ``Embedded Core Design with FPGAs'', McGraw-Hill Electronic Engineering, 2007.
