@@ -65,7 +65,7 @@
     }
     \renewcommand{\lstlistingname}{Code}
     \renewcommand{\lstlistlistingname}{List of \lstlistingname s}
-    \setmonofont{Courier New}
+    % \setmonofont{Courier New}
     \tolerance=5000
 }
 

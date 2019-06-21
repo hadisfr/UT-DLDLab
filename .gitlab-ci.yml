@@ -1,0 +1,9 @@
+image: dockershelf/latex:full
+
+build:
+  script:
+    - latexmk -xelatex *.tex
+  artifacts:
+    name: "DLDLab"
+    paths:
+      - "*.pdf"
