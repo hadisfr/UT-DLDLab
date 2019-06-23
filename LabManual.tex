@@ -1,6 +1,7 @@
 \documentclass[12pt, logo=tehranDLDL/ut]{tehranDLDL}
 \usepackage{pgfplots}
 \usepackage{subcaption}
+\usepackage{multicol}
 
 \suptitle{}
 \supsubtitle{}
@@ -108,7 +109,13 @@ Before connecting anything to a circuit, always verify the power supply voltages
 
 \section{Oscilloscope Guide}
 
-The main purpose of an oscilloscope is to graph an electrical signal as it varies over time. Most scopes produce a two-dimensional graph with time on the x-axis and voltage on the y-axis. 
+The main purpose of an oscilloscope is to graph an electrical signal as it varies over time. Most scopes produce a two-dimensional graph with time on the x-axis and voltage on the y-axis.
+
+\begin{figure}
+    \centering
+    \caption{Old oscilloscopes, University of Tehran}
+    \includegraphics[width=0.7\linewidth]{oscilloscope}
+\end{figure}
 
 Many scopes have measurement tools, which help to quickly quantify frequency, amplitude, and other waveform characteristics. In general, a scope can measure both time-based and voltage-based characteristics:
 
@@ -236,6 +243,7 @@ DE1 and DE2 board provides users many features to enable various multimedia proj
 
 \subsection{DE1}
 
+\begin{multicols}{2}
 \begin{itemize}
     \item Altera Cyclone~II 2C20 FPGA with 20000 LEs
     \item Altera Serial Configuration devices (EPCS4) for Cyclone~II 2C20
@@ -258,9 +266,11 @@ DE1 and DE2 board provides users many features to enable various multimedia proj
     \item Two 40-pin Expansion Headers (GPIO: voltage levels: \SI{3.3}{\volt})
     \item DE1 Lab CD-ROM which contains many examples with source code
 \end{itemize}
+\end{multicols}
 
 \subsection{DE2}
 
+\begin{multicols}{2}
 \begin{itemize}
     \item Altera Cyclone~II 2C35 FPGA with 35000 LEs
     \item Altera Serial Configuration devices (EPCS16) for Cyclone~II 2C35
@@ -287,6 +297,7 @@ DE1 and DE2 board provides users many features to enable various multimedia proj
     \item Two 40-pin Expansion Headers with diode protection
     \item DE2 Lab CD-ROM which contains many examples with source code to exercise the boards, including SDRAM and Flash Controller,  CD-Quality Music Player, VGA and TV Labs, SD Card reader, RS-232/PS-2 Communication Labs, NIOSII, and Control Panel API
 \end{itemize}
+\end{multicols}
 
 More information about these boards is provided in their manuals on your desktops. Please refer to the manual for pin assignments. 
 
